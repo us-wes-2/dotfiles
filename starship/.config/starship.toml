@@ -1,0 +1,42 @@
+command_timeout = 500
+
+[character]
+success_symbol = "[>](bold #608B4E)"
+error_symbol = "[>](bold #F44747)"
+
+[directory]
+truncation_length = 3
+truncate_to_repo = true
+style = "#569CD6"
+
+[git_branch]
+format = "[$branch]($style) "
+style = "#C586C0"
+
+[git_status]
+format = '([$all_status$ahead_behind]($style) )'
+style = "#CE9178"
+
+[package]
+disabled = true
+
+[nodejs]
+format = "[$version]($style) "
+
+[python]
+disabled = true
+
+[rust]
+disabled = true
+
+[golang]
+disabled = true
+
+[java]
+disabled = true
+
+[ruby]
+disabled = true
+
+[docker_context]
+disabled = true
