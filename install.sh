@@ -6,8 +6,9 @@
  # Install fd and ripgrep
  sudo apt-get update -qq
  sudo apt-get install -y fd-find ripgrep
- curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
+ sudo curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
  rtk init --global
+ export RTK_TELEMETRY_DISABLED=1
 
    # fd installs as fdfind on Debian/Ubuntu, symlink to fd
    sudo ln -sf "$(which fdfind)" /usr/local/bin/fd
