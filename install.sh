@@ -31,3 +31,10 @@ export RTK_TELEMETRY_DISABLED=1
    }
 
    create_symlinks
+
+# Rex on Ona (see rex-setup.sh): load the shell helpers from ~/.zshrc. One line is added, once,
+# so the environment's own ~/.zshrc stays as it is. The server itself is started by
+# post-start-install.sh (where the devcontainer runs it) or by the first SSH login (rex.zsh).
+rex_line='[ -r "$HOME/dotfiles/rex.zsh" ] && source "$HOME/dotfiles/rex.zsh"'
+touch "$HOME/.zshrc"
+grep -qxF "$rex_line" "$HOME/.zshrc" || printf '\n%s\n' "$rex_line" >> "$HOME/.zshrc"
